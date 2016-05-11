@@ -5,10 +5,10 @@
 all: build
 
 build:
-	   @docker build -t imac-cloud/opensips:2.2.0 .
+	   @docker build -t qxip/docker-hepswitch .
 
 quickstart:
 	@echo "Quick starting sample"
 	@docker run --name opensips -d -p 5060:5060/udp \
 	-e ADVERTISED_IP="$(ip route get 8.8.8.8 | awk '{print $NF; exit}')" \
-	imac-cloud/opensips:2.2.0
+	qxip/docker-hepswitch
