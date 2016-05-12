@@ -26,7 +26,7 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
     dpkg -i ../*.deb && \
     rm -rf rtpengine
 
-RUN apt-get purge -y bison build-essential ca-certificates flex git m4 pkg-config curl  && \
+RUN apt-get purge -y bison build-essential ca-certificates flex git m4 pkg-config curl vim && \
     apt-get autoremove -y && \
     apt-get install -y libmicrohttpd10 rsyslog ngrep && \
     apt-get clean

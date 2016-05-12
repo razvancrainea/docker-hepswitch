@@ -37,7 +37,7 @@ expect \"END\"
 sed -i "s/advertised_address=.*/advertised_address=\"${ADVERTISED_IP}\"/g" /usr/local/etc/opensips/opensips.cfg
 sed -i "s/listen=udp.*/listen=udp:${HOST_IP}:5060/g" /usr/local/etc/opensips/opensips.cfg
 sed -i "s/listen=ws.*/listen=ws:${HOST_IP}:5060/g" /usr/local/etc/opensips/opensips.cfg
-sed -i "s/force_send_socket(\"\([^:]*\):.*\")/force_send_socket(\"\1:${HOST_IP}:5060\")/g" /usr/local/etc/opensips/opensips.cfg
+sed -i "s/force_send_socket(\([^:]*\):.*)/force_send_socket(\1:${HOST_IP}:5060)/g" /usr/local/etc/opensips/opensips.cfg
 sed -i "s/\$si == \"[^\"]*\"/\$si == \"${FREESWITCH_IP}\"/" /usr/local/etc/opensips/opensips.cfg
 sed -i "s/\$du = \"sip:[^\"]*\"/\$du = \"sip:${FREESWITCH_IP}\"/" /usr/local/etc/opensips/opensips.cfg
 
